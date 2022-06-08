@@ -2,7 +2,7 @@
 
 *PS = Projet Scolaire*
 
-## 📚 Projet Scolaire | Réalisation d'un backend symfony
+## 📚 Projet Scolaire | Réalisation d'une web extension
 
 Novembre 2021
 
