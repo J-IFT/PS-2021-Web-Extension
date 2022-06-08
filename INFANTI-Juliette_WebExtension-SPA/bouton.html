@@ -1,0 +1,111 @@
+<!--
+    Consigne :
+    - Ajouter un bouton en haut de la page web visitée en intégrant une balise HTML <button ...> dans la page :
+	* Ce bouton doit se trouver en haut de la page et être un minimum visible (Pensez à tester que le bouton s'intégre bien sur la majorité des pages du site web)
+	* Si de base la page a un thème plutôt clair, il faut qu'au chargement de la page le texte du bouton soit "Mode Nuit" (ou à l'anglaise "Night Mode"). Et si la page a un thème sombre, il faut que le texte du bouton soit "Mode Jour".
+    - Quand un utilisateur clique sur ce bouton, il faut :
+	* Si le bouton affiche "Mode Nuit", il faut que cela passe la page en mode sombre (Dark Theme) : Le fond du site doit être sombre, le texte doit être de couleur claire et le style des liens doit aussi être modifié.
+	* Si le bouton affiche "Mode Jour", il faut que cela fasse l'inverse : Un fond clair avec texte foncé.
+    - L'objectif principal c'est que les textes restent lisibles dans ces 2 modes ("Nuit" et "Jour"). Par contre, pas besoin de modifier tous les éléments de la page, ni faire quelque chose de très esthétique. 
+-->
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8">
+  </head>
+
+<!-- Le CSS de mon bouton -->
+
+  <style>
+    .extension {
+        min-width: 150px;
+        min-height: 100px;
+        border-radius: 10px;
+        padding: 1rem;
+    }
+
+    .bouton {
+        background-color: grey;
+        position: relative;
+        height: 2rem;
+        width: 4rem;
+        border-radius: 25px;
+        transition: 1s;
+    }
+
+    .positionbouton {
+        position: absolute;
+        width: 50%;
+        top: 50%;
+        transform: translateY(-50%);
+        pointer-events: none;
+    }
+
+    .cercle {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 32px;
+        width: 32px;
+        border-radius: 50%;
+        background-color: black;
+        pointer-events: none;
+        transition: 1s;
+
+    }
+    @keyframes boutonàdroite {
+        0% {
+            left: 0;
+            transform: translateX(0);
+            background-color:black;
+        }
+
+        100% {
+            left: 100%;
+            transform: translateX(-100%);
+            background-color: black;
+        }
+    }
+
+    @keyframes boutonàgauche {
+        0% {
+            left: 100%;
+            transform: translateX(-100%);
+            background-color: black;
+        }
+
+        100% {
+            left: 0;
+            transform: translateX(0);
+            background-color: black;
+        }
+    }
+</style>
+
+<!-- L'ajout du bouton à la page : comme je l'ai précisé dans le main.js, c'est en format popup, ce qui veut dire qu'il faut cliquer sur l'icone de l'extension pour voir apparaître le bouton.
+    Au chargement de la page, le bouton sera automatiquement sur le mode jour.
+    Pour le mode nuit, les images et vidéos ont un "filtre" (comme une caméra infra-rouge), ce n'est pas voulu, je viens de découvrir le système de "filter" et "invert" en CSS, si ce commentaire est toujours là c'est que je n'ai pas réussi à corriger. 
+-->
+
+<body>
+  <div class="extension">
+      <h1>PimpMySPA</h1>
+      <p>
+          Cliquez sur le bouton pour activer le mode nuit ou le désactiver ! 🐱🐶
+      </p>
+
+      <div class="bouton">
+          <div class="positionbouton" style="left: 5px;">Nuit</div>
+          <div class="positionbouton" style="right: 5px; text-align: right;">Jour</div>
+          <div class="cercle"></div>
+      </div>
+  </div>
+
+  <script src="main.js"></script>
+
+</body>
+
+
+</html>

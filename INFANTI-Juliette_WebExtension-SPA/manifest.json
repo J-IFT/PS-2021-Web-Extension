@@ -1,0 +1,24 @@
+{
+    "manifest_version": 2,
+    "name": "PimpMySPA",
+    "version": "1.0",
+    "description": "Customise le site officiel de la SPA : Société protectrice des animaux :)",
+  
+    "icons": {
+      "96": "icone_chat-chien.png"
+    },
+
+    "content_scripts": [
+      {
+        "matches": ["*://*.la-spa.fr/*"],
+        "js": ["main.js"]
+      }
+    ],
+    "browser_action": {
+      "default_popup": "bouton.html"
+    },
+    "permissions": [
+      "https://www.la-spa.fr/",
+      "tabs"
+    ]
+}
