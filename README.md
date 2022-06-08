@@ -65,8 +65,8 @@ Pour savoir comment charger une WebExtension dans Chrome, aller voir le début d
 
 ### 💻 Applications et langages utilisés :
 
++ Javascript
 + Atom
-+ Javscript
 
 
 
